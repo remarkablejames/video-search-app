@@ -17,11 +17,11 @@ const VideoDetail = ({ video }) => {
     <div className="video-detail">
       <div className="ui raised segment">
         <div>
+          <h3 className="ui header">{video.snippet.title}</h3>
           <div className="ui embed">
             <iframe title="Video Player" src={VIDEO_SRC} />
           </div>
-          <h2 className="ui header">{video.snippet.title}</h2>
-          <h4>{video.snippet.description}</h4>
+          <em>{video.snippet.description}</em>
         </div>
       </div>
     </div>
