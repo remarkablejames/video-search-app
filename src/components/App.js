@@ -23,13 +23,10 @@ class App extends React.Component {
       videos: response.data.items,
       selectedVideo: response.data.items[0],
     });
-    console.log(searchTerm);
-    console.log(response);
   };
 
   onVideoSelect = (video) => {
     this.setState({ selectedVideo: video });
-    console.log("from the App", video);
   };
   render() {
     return (
