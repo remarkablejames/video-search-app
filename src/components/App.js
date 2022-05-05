@@ -3,12 +3,13 @@ import SearchBar from "./SearchBar";
 import youtube from "../apis/youtube";
 import VideoList from "./VideoList";
 import VideoDetail from "./VideoDetail";
+import "./App.css";
 
 class App extends React.Component {
   state = { videos: [], selectedVideo: null };
 
   componentDidMount() {
-    this.formSubmitHandler("cars");
+    this.formSubmitHandler("laptops");
   }
 
   formSubmitHandler = async (searchTerm) => {
@@ -32,20 +33,20 @@ class App extends React.Component {
   };
   render() {
     return (
-      <div className="ui container">
-        <h2>Hello world from the App component</h2>
-        <h3>I have {this.state.videos.length} videos</h3>
+      <div className="ui  app ">
         <SearchBar formSubmit={this.formSubmitHandler} />
-        <div className="ui grid">
-          <div className="ui row">
-            <div className="eleven wide column">
-              <VideoDetail video={this.state.selectedVideo} />
-            </div>
-            <div className="five wide column">
-              <VideoList
-                onVideoSelect={this.onVideoSelect}
-                videos={this.state.videos}
-              />
+        <div className=" ui segment">
+          <div className="ui grid ">
+            <div className="ui row">
+              <div className="eleven wide column">
+                <VideoDetail video={this.state.selectedVideo} />
+              </div>
+              <div className="five wide column">
+                <VideoList
+                  onVideoSelect={this.onVideoSelect}
+                  videos={this.state.videos}
+                />
+              </div>
             </div>
           </div>
         </div>
