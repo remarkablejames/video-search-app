@@ -20,8 +20,8 @@ const VideoDetail = ({ video }) => {
       </div>
       <div className="ui raised segment">
         <div>
-          <h3 className="ui header">{video.snippet.title}</h3>
-          <p>{video.snippet.description}</p>
+          <h2 className="ui header">{video.snippet.title}</h2>
+          <h4>{video.snippet.description}</h4>
         </div>
       </div>
     </div>
