@@ -10,7 +10,6 @@ class SearchBar extends React.Component {
   onFormSubmit = (e) => {
     e.preventDefault();
     this.props.formSubmit(this.state.term);
-    this.setState({ term: "" });
   };
   render() {
     return (
@@ -18,11 +17,18 @@ class SearchBar extends React.Component {
         <form className="ui form" onSubmit={this.onFormSubmit}>
           <div className="field">
             <label>Search Any Video</label>
-            <input
-              type="text"
-              value={this.state.term}
-              onChange={this.onChangeHandler}
-            />
+
+            <div className="ui action input">
+              <input
+                type="text"
+                placeholder="Search..."
+                value={this.state.term}
+                onChange={this.onChangeHandler}
+              />
+              <button className="ui icon button">
+                <i className="search icon"></i>
+              </button>
+            </div>
           </div>
         </form>
       </div>
